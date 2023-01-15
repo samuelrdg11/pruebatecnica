@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 
 const Buscador = () => {
 
-    const [ciudad, setCiudad] = useState("");
+    const [ciudad, setCiudad] = useState("Bogotá"); //Se coloca un valor para que no no se interprete como bad request
     const [clima, setClima] = useState("");
+    const [error, setError] = useState("");
 
 
     const ubicacionURL = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=251643f089f7a4591111863c7f26cb76`
@@ -18,27 +19,35 @@ const Buscador = () => {
         const fetchUbicacionActual = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=es&units=metric&appid=251643f089f7a4591111863c7f26cb76`)
         await fetchUbicacionActual.json()
             .then(data => {
-                setClima(data)
-                console.log(data)
+                if (data.cod > 399) {
+                    setClima(false) //Si existe un error al hacer el request, no se le asignaran los valores
+                    setError("Tu ubicación no ha sido detectada") //Además de no pasar los valores si hay un bad request, este le arrojará una alerta al servidor
+                    return;
+                }
+                else {
+                    setClima(data)
+                }
             })
     }
 
     const getClimaInput = async () => {
         const fetchClimaInput = await fetch(ubicacionURL)
         await fetchClimaInput.json()
-        .then(data => {
-            if (data.cod > 399) {
-              setClima(false) //Si existe un error al hacer el request, no se le asignaran los valores
-              return;
-            }
-            else {
-              setClima(data)
-            }
-          })
+            .then(data => {
+                if (data.cod > 399) {
+                    setClima(false) //Si existe un error al hacer el request, no se le asignaran los valores
+                    setError("Ha habido un error en al digitación") //Además de no pasar los valores si hay un bad request, este le arrojará una alerta al servidor
+                    return;
+                }
+                else {
+                    setClima(data)
+                }
+            })
     }
 
     useEffect(() => {
         getClimaInput();
+        setError(null); //Se coloca para cuando se haga un nuevo request, el error esté en null 
     }, [ciudad])
 
     const busquedaClimatica = (e) => {
@@ -57,6 +66,13 @@ const Buscador = () => {
                 />
                 <button onClick={localizacion}> Obtener Ubicacion</button>
             </div>
+            {(error) ? (
+                <div className='alert' role="alert">
+                    {error}
+                </div>
+            ) :
+                null
+            }
             {(clima) ? (
                 <div className='container d-flex justify-content-center'>
                     <div className='card mx-auto mb-2'>
