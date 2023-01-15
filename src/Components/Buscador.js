@@ -62,14 +62,14 @@ const Buscador = () => {
 
     return (
         <div className='App'>
-            <div className='input mb-3 mx auto'>
-                <input
-                    type="text"
-                    className='form-control'
+            <div className='input mb-3 mx-auto'>
+                <input type="text"
+                    placeholder="Ingrese la ciudad a buscar"
+                    className="form-control text-light bg-dark"
                     onKeyDown={busquedaClimatica}
                 />
-                <button onClick={localizacion}> Obtener Ubicacion</button>
             </div>
+            <button onClick={localizacion}> Obtener Ubicacion</button>
             {(error) ? (
                 <div className='alert' role="alert">
                     {error}
@@ -83,7 +83,7 @@ const Buscador = () => {
                         <h3 className="nombreciudad">{clima.name}</h3>
                         <h1 className="temperatura">{clima.main.temp.toFixed(0)} &deg;</h1>
                         <p className='descripcion'>{clima.weather[0].description}</p>
-                        <img className='img mb-2' src={Images(imagenes)}/>
+                        <img className='img mb-2' src={Images(imagenes)} />
                         <p className="card-text">Temp. máxima: {(clima.main.temp_max)}&deg;</p>
                         <p className="card-text">Temp. mínima: {(clima.main.temp_min)}&deg;</p>
                         <p className="card-text">Sensación térmica: {(clima.main.feels_like)}&deg;</p>

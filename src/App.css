@@ -26,6 +26,10 @@ body {
 .mensaje {
   opacity: 40%;
 }
+.input {
+  width: 100%;
+  max-width: 500px;
+}
 
 .card {
   max-height: 20%;
@@ -35,6 +39,16 @@ body {
 
 .descripcion{
   text-transform: capitalize;
+}
+
+
+
+.img {
+  border-radius:  0.5rem 0.5rem 0 0;
+  object-fit: fill;
+  height: max(10rem, 25vh);
+  aspect-ratio: 4/3;
+  mix-blend-mode: var(--card-blend-mode);
 }
 
 
