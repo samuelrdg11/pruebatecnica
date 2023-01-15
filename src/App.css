@@ -1,0 +1,22 @@
+.App {
+  align-items: center;
+  text-align: center;
+}
+
+.navbar{
+  background-color: rgb(41, 41, 35);
+  border: 0.px solid #47474774;
+  border-radius: 0.05rem;
+  box-shadow: 0.1rem 0.3rem -0.03rem #47474774;
+}
+
+#tituloprincipal {
+  color: whitesmoke;
+}
+
+.mensaje {
+  opacity: 40%;
+}
+
+
+
