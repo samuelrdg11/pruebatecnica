@@ -19,7 +19,7 @@ const Images = (imagenes) => {
             imagenes = 'imagenclima/FewClouds.jpg'
             break;
         case 'Overcast clouds':
-            imagenes = 'imagenclima/Overcastcloud.jpg'
+            imagenes = 'imagenclima/OvercastClouds.jpg'
             break;
         case 'Shower rain':
             imagenes = 'imagenclima/ShowerRain.jpg'
