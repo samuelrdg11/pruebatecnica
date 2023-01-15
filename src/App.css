@@ -75,10 +75,33 @@ body {
   position: absolute;
   font-size: 10px;
   left: 35px;
-  top: -3px; 
-  
+  top: -3px;
+
 }
 
 .tool:hover .tooltiptext {
   visibility: visible;
+}
+
+.alert {
+  color: black;
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+  width: 100%;
+}
+
+#text {
+  color: aqua;
+  opacity: 65%;
+}
+
+#boton {
+  background-color: rgb(17, 174, 174);
+  color: whitesmoke;
+  opacity: 75%;
+}
+
+#currentLocation {
+  color: #2a2a2a;
 }
