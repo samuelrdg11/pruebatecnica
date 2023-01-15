@@ -1,6 +1,7 @@
 .App {
   align-items: center;
   text-align: center;
+  color: whitesmoke;
 }
 
 .navbar{
@@ -16,6 +17,14 @@
 
 .mensaje {
   opacity: 40%;
+}
+
+body {
+  background-image: url(./ImagenFondo/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 
