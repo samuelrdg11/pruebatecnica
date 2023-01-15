@@ -7,7 +7,7 @@ import AddLocationTwoToneIcon from '@mui/icons-material/AddLocationTwoTone';
 
 const Buscador = () => {
 
-    const [ciudad, setCiudad] = useState("Bogotá"); //Se coloca un valor para que no no se interprete como bad request
+    const [ciudad, setCiudad] = useState("Bogotá"); //Se coloca un valor para que no se interprete como bad request
     const [clima, setClima] = useState("");
     const [error, setError] = useState("");
     const [imagenes, setImagenes] = useState("");
@@ -48,6 +48,7 @@ const Buscador = () => {
                 else {
                     setImagenes(data.weather[0].main)
                     setClima(data)
+                    console.log(data.weather[0].main)
                 }
             })
     }

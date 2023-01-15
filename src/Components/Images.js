@@ -1,7 +1,7 @@
 const Images = (imagenes) => {
     switch (imagenes) {
         case 'Thunderstorm':
-            imagenes = 'imagenclima/Thunderstorm.jpg'
+            imagenes = 'imagenclima/thunderstorm.jpg'
             break;
         case 'Drizzle':
             imagenes = 'imagenclima/Drizzle.jpg'
