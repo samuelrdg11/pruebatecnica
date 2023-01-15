@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Images from './Images.js';
 
 const Buscador = () => {
 
     const [ciudad, setCiudad] = useState("Bogotá"); //Se coloca un valor para que no no se interprete como bad request
     const [clima, setClima] = useState("");
     const [error, setError] = useState("");
+    const [imagenes, setImagenes] = useState("");
 
 
     const ubicacionURL = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=251643f089f7a4591111863c7f26cb76`
@@ -25,6 +27,7 @@ const Buscador = () => {
                     return;
                 }
                 else {
+                    setImagenes(data.weather[0].main)
                     setClima(data)
                 }
             })
@@ -40,6 +43,7 @@ const Buscador = () => {
                     return;
                 }
                 else {
+                    setImagenes(data.weather[0].main)
                     setClima(data)
                 }
             })
@@ -79,6 +83,7 @@ const Buscador = () => {
                         <h3 className="nombreciudad">{clima.name}</h3>
                         <h1 className="temperatura">{clima.main.temp.toFixed(0)} &deg;</h1>
                         <p className='descripcion'>{clima.weather[0].description}</p>
+                        <img className='img mb-2' src={Images(imagenes)}/>
                         <p className="card-text">Temp. máxima: {(clima.main.temp_max)}&deg;</p>
                         <p className="card-text">Temp. mínima: {(clima.main.temp_min)}&deg;</p>
                         <p className="card-text">Sensación térmica: {(clima.main.feels_like)}&deg;</p>
