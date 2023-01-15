@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Images from './Images.js';
+import Navbar from './Navbar.jsx';
+import { Link } from 'react-router-dom';
+import AddLocationTwoToneIcon from '@mui/icons-material/AddLocationTwoTone';
 
 const Buscador = () => {
 
@@ -62,14 +65,15 @@ const Buscador = () => {
 
     return (
         <div className='App'>
+            <Navbar />
             <div className='input mb-3 mx-auto'>
-                <input type="text"
+                <input
+                    type="text"
                     placeholder="Ingrese la ciudad a buscar"
                     className="form-control text-light bg-dark"
                     onKeyDown={busquedaClimatica}
                 />
             </div>
-            <button onClick={localizacion}> Obtener Ubicacion</button>
             {(error) ? (
                 <div className='alert' role="alert">
                     {error}
@@ -77,6 +81,10 @@ const Buscador = () => {
             ) :
                 null
             }
+            <div className='tool'>
+                <AddLocationTwoToneIcon className='mx-2 mb-2' id="currentLocation" onClick={localizacion} />
+                <span className="tooltiptext">Ubicacion Actual</span>
+            </div>
             {(clima) ? (
                 <div className='container d-flex justify-content-center'>
                     <div className='card mx-auto mb-2'>
@@ -94,6 +102,7 @@ const Buscador = () => {
                 <h3>No has introducido nada</h3>
             )
             }
+             <Link to="/" className='btn btn-outline btn-sm mx-1' id='boton'>Regresar al inicio</Link>
         </div>
 
     )

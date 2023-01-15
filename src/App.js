@@ -1,13 +1,19 @@
 import './App.css';
 import React from 'react';
 import Buscador from './Components/Buscador';
-import Navbar from './Components/Navbar';
+import Inicio from './Components/Inicio';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Buscador />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Inicio />} />
+          <Route path='/Buscar' element={<Buscador />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

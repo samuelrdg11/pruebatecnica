@@ -12,7 +12,21 @@ body {
   background-size: cover;
 }
 
-.navbar{
+.funciones {
+  color: #2a2a2a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 400px) {
+  .funciones {
+    width: 90%;
+  }
+}
+
+.navbar {
   background-color: rgb(41, 41, 35);
   border: 0.px solid #47474774;
   border-radius: 0.05rem;
@@ -26,6 +40,7 @@ body {
 .mensaje {
   opacity: 40%;
 }
+
 .input {
   width: 100%;
   max-width: 500px;
@@ -37,21 +52,33 @@ body {
   background-color: rgba(41, 41, 35, 0.189);
 }
 
-.descripcion{
+.descripcion {
   text-transform: capitalize;
 }
 
-
-
 .img {
-  border-radius:  0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   object-fit: fill;
   height: max(10rem, 25vh);
   aspect-ratio: 4/3;
   mix-blend-mode: var(--card-blend-mode);
 }
 
+.tool {
+  position: relative;
+  display: inline-block;
+}
 
+.tool .tooltiptext {
+  visibility: hidden;
+  color: #fff;
+  position: absolute;
+  font-size: 10px;
+  left: 35px;
+  top: -3px; 
+  
+}
 
-
-
+.tool:hover .tooltiptext {
+  visibility: visible;
+}
