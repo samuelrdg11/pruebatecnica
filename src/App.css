@@ -4,6 +4,14 @@
   color: whitesmoke;
 }
 
+body {
+  background-image: url(./ImagenFondo/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .navbar{
   background-color: rgb(41, 41, 35);
   border: 0.px solid #47474774;
@@ -19,13 +27,7 @@
   opacity: 40%;
 }
 
-body {
-  background-image: url(./ImagenFondo/cover.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
+
 
 
 
