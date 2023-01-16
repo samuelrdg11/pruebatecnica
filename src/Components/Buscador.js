@@ -48,7 +48,6 @@ const Buscador = () => {
                 else {
                     setImagenes(data.weather[0].main)
                     setClima(data)
-                    console.log(data.weather[0].main)
                 }
             })
     }
