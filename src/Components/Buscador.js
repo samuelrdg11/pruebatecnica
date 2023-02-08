@@ -102,7 +102,7 @@ const Buscador = () => {
                 <h4>No has digitado una ciudad</h4>
             )
             }
-             <Link to="/" className='btn btn-outline btn-sm mx-1' id='boton'>Regresar al inicio</Link>
+             <Link to="/" className='btn btn-outline btn-sm mx-1' id='boton'>Back to the home</Link>
         </div>
 
     )
